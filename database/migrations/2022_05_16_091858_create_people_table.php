@@ -1,26 +1,27 @@
 <?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreatePeopleTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Запустить миграции.
      *
      * @return void
      */
     public function up()
     {
         Schema::create('people', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('twitter');
             $table->timestamps();
         });
     }
-
     /**
-     * Reverse the migrations.
+     * Откат миграций.
      *
      * @return void
      */
